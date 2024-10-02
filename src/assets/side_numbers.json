@@ -1,0 +1,282 @@
+[
+    {
+        "number": 1,
+        "type": 1,
+        "keywords": []
+    },
+    {
+        "number": 6,
+        "type": 1,
+        "keywords": ["stasis"]
+    },
+    {
+        "number": 7,
+        "type": 1,
+        "keywords": ["sticky"]
+    },
+    {
+        "number": 8,
+        "type": 1,
+        "keywords": []
+    },
+    {
+        "number": 9,
+        "type": 1,
+        "keywords": []
+    },
+    {
+        "number": 10,
+        "type": 28,
+        "keywords": []
+    },
+    {
+        "number": 11,
+        "type": 4,
+        "keywords": ["mandatory","generous","stasis"]
+    },
+    {
+        "number": 12,
+        "type": 3,
+        "keywords": ["cantrip"]
+    },
+    {
+        "number": 13,
+        "type": 11,
+        "keywords": ["cantrip"]
+    },
+    {
+        "number": 14,
+        "type": 2,
+        "keywords": []
+    },
+    {
+        "number": 15,
+        "type": 2,
+        "keywords": ["cantrip"]
+    },
+    {
+        "number": 16,
+        "type": 2,
+        "keywords": ["growth"]
+    },
+    {
+        "number": 17,
+        "type": 2,
+        "keywords": ["engage"]
+    },
+    {
+        "number": 18,
+        "type": 2,
+        "keywords": ["manaGain"]
+    },
+    {
+        "number": 19,
+        "type": 2,
+        "keywords": ["pain"]
+    },
+    {
+        "number": 20,
+        "type": 2,
+        "keywords": ["deathwish"]
+    },
+    {
+        "number": 21,
+        "type": 2,
+        "keywords": ["death"]
+    },
+    {
+        "number": 22,
+        "type": 2,
+        "keywords": ["serrated"]
+    },
+    {
+        "number": 23,
+        "type": 2,
+        "keywords": ["exert"]
+    },
+    {
+        "number": 24,
+        "type": 2,
+        "keywords": ["doubleUse"]
+    },
+    {
+        "number": 25,
+        "type": 2,
+        "keywords": ["quadUse"]
+    },
+    {
+        "number": 26,
+        "type": 2,
+        "keywords": ["bloodlust"]
+    },
+    {
+        "number": 27,
+        "type": 2,
+        "keywords": ["copycat"]
+    },
+    {
+        "number": 28,
+        "type": 2,
+        "keywords": ["pristine"]
+    },
+    {
+        "number": 29,
+        "type": 2,
+        "keywords": ["guilt"]
+    },
+    {
+        "number": 30,
+        "type": 2,
+        "keywords": ["cruel"]
+    },
+    {
+        "number": 31,
+        "type": 2,
+        "keywords": ["shifter"]
+    },
+    {
+        "number": 32,
+        "type": 2,
+        "keywords": ["focus"]
+    },
+    {
+        "number": 33,
+        "type": 2,
+        "keywords": ["inspired"]
+    },
+    {
+        "number": 34,
+        "type": 5,
+        "keywords": []
+    },
+    {
+        "number": 35,
+        "type": 12,
+        "keywords": ["manaGain"]
+    },
+    {
+        "number": 36,
+        "type": 2,
+        "keywords": ["cleave"]
+    },
+    {
+        "number": 37,
+        "type": 2,
+        "keywords": ["descend"]
+    },
+    {
+        "number": 38,
+        "type": 2,
+        "keywords": ["cleave", "chain"]
+    },
+    {
+        "number": 39,
+        "type": 2,
+        "keywords": ["heavy"]
+    },
+    {
+        "number": 40,
+        "type": 2,
+        "keywords": ["inflictSingeUse"]
+    },
+    {
+        "number": 41,
+        "type": 2,
+        "keywords": ["steel"]
+    },
+    {
+        "number": 42,
+        "type": 2,
+        "keywords": ["charged"]
+    },
+    {
+        "number": 43,
+        "type": 17,
+        "keywords": []
+    },
+    {
+        "number": 44,
+        "type": 2,
+        "keywords": ["vulnerable"]
+    },
+    {
+        "number": 45,
+        "type": 2,
+        "keywords": ["era"]
+    },
+    {
+        "number": 46,
+        "type": 2,
+        "keywords": ["ranged"]
+    },
+    {
+        "number": 47,
+        "type": 2,
+        "keywords": ["ranged", "poison"]
+    },
+    {
+        "number": 48,
+        "type": 2,
+        "keywords": ["ranged", "duplicate"]
+    },
+    {
+        "number": 49,
+        "type": 2,
+        "keywords": ["ranged", "cleave"]
+    },
+    {
+        "number": 50,
+        "type": 2,
+        "keywords": ["ranged", "copycat"]
+    },
+    {
+        "number": 51,
+        "type": 2,
+        "keywords": ["selfShield"]
+    },
+    {
+        "number": 52,
+        "type": 2,
+        "keywords": ["selfHeal"]
+    },
+    {
+        "number": 53,
+        "type": 2,
+        "keywords": ["poison"]
+    },
+    {
+        "number": 54,
+        "type": 6,
+        "keywords": ["poison"]
+    },
+    {
+        "number": 55,
+        "type": 2,
+        "keywords": ["poison", "plague"]
+    },
+    {
+        "number": 56,
+        "type": 8,
+        "keywords": []
+    },
+    {
+        "number": 57,
+        "type": 8,
+        "keywords": ["flesh"]
+    },
+    {
+        "number": 58,
+        "type": 8,
+        "keywords": ["growth"]
+    },
+    {
+        "number": 59,
+        "type": 8,
+        "keywords": ["engage"]
+    },
+    {
+        "number": 60,
+        "type": 8,
+        "keywords": ["death", "enduring"]
+    }
+]
