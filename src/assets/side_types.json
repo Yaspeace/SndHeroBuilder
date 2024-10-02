@@ -11,6 +11,7 @@
     {"number": 9, "type": "mana"},
     {"number": 10, "type": "heal"},
     {"number": 43, "type": "heal and shield"},
+    {"number": 44, "type": "heal all allies"},
     {"number": 11, "type": "die"},
     {"number": 12, "type": "revive"},
     {"number": 13, "type": "ally undying"},
