@@ -278,5 +278,205 @@
         "number": 60,
         "type": 8,
         "keywords": ["death", "enduring"]
+    },
+    {
+        "number": 61,
+        "type": 8,
+        "keywords": ["manaGain"]
+    },
+    {
+        "number": 62,
+        "type": 8,
+        "keywords": ["doubleUse"]
+    },
+    {
+        "number": 63,
+        "type": 8,
+        "keywords": ["steel"]
+    },
+    {
+        "number": 64,
+        "type": 8,
+        "keywords": ["rescue"]
+    },
+    {
+        "number": 65,
+        "type": 8,
+        "keywords": ["pristine"]
+    },
+    {
+        "number": 66,
+        "type": 8,
+        "keywords": ["cantrip"]
+    },
+    {
+        "number": 67,
+        "type": 8,
+        "keywords": ["copycat"]
+    },
+    {
+        "number": 68,
+        "type": 8,
+        "keywords": ["focus"]
+    },
+    {
+        "number": 69,
+        "type": 8,
+        "keywords": ["cleave"]
+    },
+    {
+        "number": 70,
+        "type": 8,
+        "keywords": ["charged"]
+    },
+    {
+        "number": 71,
+        "type": 8,
+        "keywords": ["cleance"]
+    },
+    {
+        "number": 72,
+        "type": 42,
+        "keywords": []
+    },
+    {
+        "number": 73,
+        "type": 42,
+        "keywords": ["cantrip"]
+    },
+    {
+        "number": 74,
+        "type": 8,
+        "keywords": ["selfHeal"]
+    },
+    {
+        "number": 75,
+        "type": 8,
+        "keywords": ["smith"]
+    },
+    {
+        "number": 76,
+        "type": 9,
+        "keywords": []
+    },
+    {
+        "number": 77,
+        "type": 9,
+        "keywords": ["cantrip"]
+    },
+    {
+        "number": 78,
+        "type": 9,
+        "keywords": ["cantrip", "boned"]
+    },
+    {
+        "number": 79,
+        "type": 9,
+        "keywords": ["growth"]
+    },
+    {
+        "number": 80,
+        "type": 9,
+        "keywords": ["decay"]
+    },
+    {
+        "number": 81,
+        "type": 9,
+        "keywords": ["death"]
+    },
+    {
+        "number": 82,
+        "type": 9,
+        "keywords": ["pain"]
+    },
+    {
+        "number": 83,
+        "type": 9,
+        "keywords": ["bloodlust"]
+    },
+    {
+        "number": 84,
+        "type": 9,
+        "keywords": ["pair"]
+    },
+    {
+        "number": 85,
+        "type": 9,
+        "keywords": ["trio"]
+    },
+    {
+        "number": 86,
+        "type": 43,
+        "keywords": ["manaGain"]
+    },
+    {
+        "number": 87,
+        "type": 9,
+        "keywords": ["charged"]
+    },
+    {
+        "number": 88,
+        "type": 2,
+        "keywords": ["charged", "singleUse"]
+    },
+    {
+        "number": 89,
+        "type": 2,
+        "keywords": ["inflictPain", "singleUse"]
+    },
+    {
+        "number": 90,
+        "type": 2,
+        "keywords": ["cruel", "singleUse"]
+    },
+    {
+        "number": 91,
+        "type": 2,
+        "keywords": ["poison", "singleUse"]
+    },
+    {
+        "number": 92,
+        "type": 2,
+        "keywords": ["selfHeal", "singleUse"]
+    },
+    {
+        "number": 93,
+        "type": 9,
+        "keywords": ["singleUse"]
+    },
+    {
+        "number": 94,
+        "type": 8,
+        "keywords": ["singleUse", "permaBoost"]
+    },
+    {
+        "number": 95,
+        "type": 2,
+        "keywords": ["weaken", "singleUse"]
+    },
+    {
+        "number": 96,
+        "type": 2,
+        "keywords": ["fierce", "singleUse"]
+    },
+    {
+        "number": 97,
+        "type": 2,
+        "keywords": ["echo", "singleUse"]
+    },
+    {
+        "number": 98,
+        "type": 2,
+        "keywords": ["dispel", "singleUse"]
+    },
+    {
+        "number": 99,
+        "type": 2,
+        "keywords": ["inflictExert", "singleUse"]
+    },
+    {
+        "number": 100,
+        "type": 16,
+        "keywords": ["singleUse"]
     }
 ]
