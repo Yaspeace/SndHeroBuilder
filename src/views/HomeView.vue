@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <HeroDice style="width: 30%"></HeroDice>
-    <DiceEditPopup />
+    <HeroDice style="width: 50%"></HeroDice>
   </div>
 </template>
 

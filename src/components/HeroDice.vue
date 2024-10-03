@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <table class="dice">
+  <div style="display: flex; align-items: flex-start">
+    <table class="dice" style="width: 50%">
       <tbody>
         <tr>
           <td></td>
@@ -34,19 +34,31 @@
         </tr>
       </tbody>
     </table>
+
+    <DiceEditPopup style="margin-left: 20px; width: 50%" />
   </div>
 </template>
 
 <script lang="ts">
-import { Vue } from "vue-class-component";
+import { Hero } from "@/models/Hero.model";
+import { Options, Vue } from "vue-class-component";
+import DiceEditPopup from "./DiceEditPopup.vue";
 
-export default class HeroDice extends Vue {}
+@Options({
+  components: {
+    DiceEditPopup,
+  },
+})
+export default class HeroDice extends Vue {
+  public curEditingSide = 0;
+
+  private hero: Hero = new Hero();
+}
 </script>
 
 <style scoped lang="scss">
 table.dice {
   border-collapse: collapse;
-  width: 100%;
 
   .dice-img {
     width: 100%;

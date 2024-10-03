@@ -1,8 +1,6 @@
 <template>
   <div class="popup-layout">
-    <div>
-      Pips: <InputNumber v-model="pipCount" :use-grouping="false" fluid />
-    </div>
+    <div>Pips: <InputNumber v-model="pipCount" :use-grouping="false" /></div>
     <div>
       Type:
       <AutoComplete
@@ -19,11 +17,14 @@
       <AutoComplete
         v-model="chosenKeywords"
         multiple
-        fluid
         dropdown
         :suggestions="filteredKeywords"
         @complete="searchKeywords"
       />
+    </div>
+    <div class="buttons">
+      <Button label="Сохранить" />
+      <Button label="Отмена" severity="secondary" />
     </div>
   </div>
 </template>
@@ -35,11 +36,13 @@ import SIDE_TYPES from "@/assets/side_types.json";
 import KEYWORDS from "@/assets/keywords.json";
 import { SideType } from "@/models/SideType.model";
 import InputNumber from "primevue/inputnumber";
+import Button from "primevue/button";
 
 @Options({
   components: {
     AutoComplete,
     InputNumber,
+    Button,
   },
 })
 export default class DiceEditPopup extends Vue {
@@ -51,7 +54,7 @@ export default class DiceEditPopup extends Vue {
   public filteredSideTypes: SideType[] = [];
 
   public allKeywords: string[] = [];
-  public filteredKeywords: string = [];
+  public filteredKeywords: string[] = [];
 
   public mounted(): void {
     this.sideTypes = SIDE_TYPES;
@@ -76,8 +79,15 @@ export default class DiceEditPopup extends Vue {
 .popup-layout {
   border: 1px solid lightgray;
   border-radius: 10px;
-  background-color: rgba(200, 200, 200, 0.5);
-  width: 250px;
+  background-color: rgba(200, 200, 200, 0.97);
   padding: 15px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  align-items: baseline;
+  justify-content: flex-end;
+  margin-top: 15px;
 }
 </style>
