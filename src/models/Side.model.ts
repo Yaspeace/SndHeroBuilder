@@ -1,5 +1,9 @@
 export class Side {
-  public number = 0;
+  public number: number;
   public type = 0;
   public keywords: string[] = [];
+
+  constructor(num: number) {
+    this.number = num;
+  }
 }

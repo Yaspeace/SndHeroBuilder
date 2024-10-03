@@ -1,10 +1,12 @@
 <template>
   <div class="popup-layout">
-    <div>Pips: <InputNumber v-model="pipCount" :use-grouping="false" /></div>
+    <div>
+      Pips: <InputNumber v-model="side.pipCount" :use-grouping="false" />
+    </div>
     <div>
       Type:
       <AutoComplete
-        v-model="chosenType"
+        v-model="side.type"
         dropdown
         force-selection
         option-label="type"
@@ -15,7 +17,7 @@
     <div>
       Keywords:
       <AutoComplete
-        v-model="chosenKeywords"
+        v-model="side.keywords"
         multiple
         dropdown
         :suggestions="filteredKeywords"
@@ -23,8 +25,8 @@
       />
     </div>
     <div class="buttons">
-      <Button label="Сохранить" />
-      <Button label="Отмена" severity="secondary" />
+      <Button label="Сохранить" @click="$emit('onSave', side)" />
+      <Button label="Отмена" severity="secondary" @click="$emit('onCancel')" />
     </div>
   </div>
 </template>
@@ -37,6 +39,7 @@ import KEYWORDS from "@/assets/keywords.json";
 import { SideType } from "@/models/SideType.model";
 import InputNumber from "primevue/inputnumber";
 import Button from "primevue/button";
+import { SideEdit } from "@/models/SideEdit.model";
 
 @Options({
   components: {
@@ -44,8 +47,14 @@ import Button from "primevue/button";
     InputNumber,
     Button,
   },
+  emits: ["onSave", "onCancel"],
+  props: {
+    initialSide: SideEdit,
+  },
 })
 export default class DiceEditPopup extends Vue {
+  public side: SideEdit = new SideEdit();
+
   public pipCount = 1;
   public chosenType: SideType | null = null;
   public chosenKeywords: string[] = [];
