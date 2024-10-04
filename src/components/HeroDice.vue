@@ -60,11 +60,14 @@
     </table>
 
     <DiceEditPopup
-      v-if="curEditingSide > 0"
+      v-if="curEditingSide >= 0"
       style="margin-left: 20px; width: 50%"
-      @on-save="console.log($event)"
-      @on-cancel="curEditingSide = 0"
+      :side="initialSide"
+      @on-save="onSaveSide($event)"
+      @on-cancel="curEditingSide = -1"
     />
+
+    {{ hero.generate() }}
   </div>
 </template>
 
@@ -73,6 +76,10 @@ import { Hero } from "@/models/Hero.model";
 import { Options, Vue } from "vue-class-component";
 import DiceEditPopup from "./DiceEditPopup.vue";
 import { Sides } from "@/models/enums/Sides.enum";
+import { HeroSide } from "@/models/HeroSide.model";
+import { SideEdit } from "@/models/SideEdit.model";
+import { SideTypeService } from "@/services/SideTypeService";
+import { SideService } from "@/services/SideService";
 
 @Options({
   components: {
@@ -80,14 +87,33 @@ import { Sides } from "@/models/enums/Sides.enum";
   },
 })
 export default class HeroDice extends Vue {
-  public curEditingSide = 0;
+  public curEditingSide = -1;
+  public initialSide: SideEdit = new SideEdit();
 
   public sidesEnum: typeof Sides = Sides;
 
   private hero: Hero = new Hero();
+  private sideTypeService: SideTypeService = new SideTypeService();
+  private sideService: SideService = new SideService();
 
   public setEditingSide(sideNum: number) {
     this.curEditingSide = sideNum;
+
+    const heroSide: HeroSide = this.hero.sides[sideNum];
+    this.initialSide.pipCount = heroSide.pips;
+    const side = this.sideService.getSide(heroSide.sideNum);
+    this.initialSide.keywords = [];
+    this.initialSide.keywords.push(...side.keywords);
+    this.initialSide.keywords.push(...heroSide.keywords);
+    this.initialSide.type = this.sideTypeService.getSideType(side.type);
+  }
+
+  public onSaveSide(side: SideEdit): void {
+    const fittestSide = this.sideService.fitSide(side);
+    this.hero.sides[this.curEditingSide].pips = fittestSide.pips;
+    this.hero.sides[this.curEditingSide].needClear = fittestSide.needClear;
+    this.hero.sides[this.curEditingSide].sideNum = fittestSide.sideNum;
+    this.hero.sides[this.curEditingSide].keywords = fittestSide.keywords;
   }
 }
 </script>

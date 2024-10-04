@@ -34,12 +34,12 @@
 <script lang="ts">
 import AutoComplete from "primevue/autocomplete";
 import { Options, Vue } from "vue-class-component";
-import SIDE_TYPES from "@/assets/side_types.json";
-import KEYWORDS from "@/assets/keywords.json";
 import { SideType } from "@/models/SideType.model";
 import InputNumber from "primevue/inputnumber";
 import Button from "primevue/button";
 import { SideEdit } from "@/models/SideEdit.model";
+import { SideTypeService } from "@/services/SideTypeService";
+import { KeywordService } from "@/services/KeywordService";
 
 @Options({
   components: {
@@ -49,37 +49,28 @@ import { SideEdit } from "@/models/SideEdit.model";
   },
   emits: ["onSave", "onCancel"],
   props: {
-    initialSide: SideEdit,
+    side: SideEdit,
   },
 })
 export default class DiceEditPopup extends Vue {
-  public side: SideEdit = new SideEdit();
+  public side!: SideEdit;
 
   public pipCount = 1;
   public chosenType: SideType | null = null;
   public chosenKeywords: string[] = [];
 
-  public sideTypes: SideType[] = [];
   public filteredSideTypes: SideType[] = [];
-
-  public allKeywords: string[] = [];
   public filteredKeywords: string[] = [];
 
-  public mounted(): void {
-    this.sideTypes = SIDE_TYPES;
-    this.allKeywords = KEYWORDS;
-  }
+  private sideTypeService: SideTypeService = new SideTypeService();
+  private keywordService: KeywordService = new KeywordService();
 
   public searchSideTypes(event: { query: string }): void {
-    this.filteredSideTypes = this.sideTypes.filter((x) =>
-      x.type.includes(event.query)
-    );
+    this.filteredSideTypes = this.sideTypeService.searchSideTypes(event.query);
   }
 
   public searchKeywords(event: { query: string }): void {
-    this.filteredKeywords = this.allKeywords.filter((x) =>
-      x.includes(event.query)
-    );
+    this.filteredKeywords = this.keywordService.searchKeywords(event.query);
   }
 }
 </script>

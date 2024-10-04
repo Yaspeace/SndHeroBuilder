@@ -8,7 +8,7 @@ export class HeroSide {
 
   private side: number;
 
-  constructor(side: number) {
+  constructor(side = 0) {
     this.side = side;
   }
 

@@ -26,7 +26,7 @@ export class Hero {
     }
 
     res += ".sd." + this.sides.map((x) => x.generateSide()).join(":");
-    res += this.sides.map((x) => x.generateKeywords()).join();
+    res += this.sides.map((x) => x.generateKeywords()).join("");
 
     return res;
   }
