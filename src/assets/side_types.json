@@ -22,7 +22,7 @@
     {"number": 18, "type": "gain reroll"},
     {"number": 19, "type": "side reuse"},
     {"number": 20, "type": "target ally"},
-    {"number": 21, "type": "targe all allies"},
+    {"number": 21, "type": "target all allies"},
     {"number": 22, "type": "target enemy"},
     {"number": 23, "type": "target all enemies"},
     {"number": 24, "type": "target all"},

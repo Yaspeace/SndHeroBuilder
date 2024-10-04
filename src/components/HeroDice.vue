@@ -6,7 +6,7 @@
           <td></td>
           <td class="bordered">
             <img
-              src="@/assets/dice.png"
+              :src="getSideImg(sidesEnum.Top)"
               class="dice-img"
               @click="setEditingSide(sidesEnum.Top)"
             />
@@ -17,28 +17,28 @@
         <tr>
           <td class="bordered">
             <img
-              src="@/assets/dice.png"
+              :src="getSideImg(sidesEnum.Left)"
               class="dice-img"
               @click="setEditingSide(sidesEnum.Left)"
             />
           </td>
           <td class="bordered">
             <img
-              src="@/assets/dice.png"
+              :src="getSideImg(sidesEnum.Mid)"
               class="dice-img"
               @click="setEditingSide(sidesEnum.Mid)"
             />
           </td>
           <td class="bordered">
             <img
-              src="@/assets/dice.png"
+              :src="getSideImg(sidesEnum.Right)"
               class="dice-img"
               @click="setEditingSide(sidesEnum.Right)"
             />
           </td>
           <td class="bordered">
             <img
-              src="@/assets/dice.png"
+              :src="getSideImg(sidesEnum.Rightmost)"
               class="dice-img"
               @click="setEditingSide(sidesEnum.Rightmost)"
             />
@@ -48,7 +48,7 @@
           <td></td>
           <td class="bordered">
             <img
-              src="@/assets/dice.png"
+              :src="getSideImg(sidesEnum.Bot)"
               class="dice-img"
               @click="setEditingSide(sidesEnum.Bot)"
             />
@@ -101,21 +101,31 @@ export default class HeroDice extends Vue {
 
     const heroSide: HeroSide = this.hero.sides[sideNum];
     this.initialSide.pipCount = heroSide.pips;
-    const side = this.sideService.getSide(heroSide.sideNum);
     this.initialSide.keywords = [];
     if (!heroSide.needClear) {
-      this.initialSide.keywords.push(...side.keywords);
+      this.initialSide.keywords.push(...heroSide.side.keywords);
     }
     this.initialSide.keywords.push(...heroSide.keywords);
-    this.initialSide.type = this.sideTypeService.getSideType(side.type);
+    this.initialSide.type = this.sideTypeService.getSideType(
+      heroSide.side.type
+    );
   }
 
   public onSaveSide(side: SideEdit): void {
     const fittestSide = this.sideService.fitSide(side);
     this.hero.sides[this.curEditingSide].pips = fittestSide.pips;
     this.hero.sides[this.curEditingSide].needClear = fittestSide.needClear;
-    this.hero.sides[this.curEditingSide].sideNum = fittestSide.sideNum;
+    this.hero.sides[this.curEditingSide].side = fittestSide.side;
     this.hero.sides[this.curEditingSide].keywords = fittestSide.keywords;
+  }
+
+  public getSideImg(sideLocation: number): any {
+    const sideType: number = this.hero.sides[sideLocation].side.type;
+    try {
+      return require(`@/assets/side_imgs/side_${sideType}.png`);
+    } catch {
+      return require(`@/assets/side_imgs/side_1.png`);
+    }
   }
 }
 </script>

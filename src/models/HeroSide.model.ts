@@ -1,24 +1,25 @@
 import { Sides } from "./enums/Sides.enum";
+import { Side } from "./Side.model";
 
 export class HeroSide {
   public pips = 1;
-  public sideNum = 1;
+  public side: Side = new Side(1);
   public keywords: string[] = [];
   public needClear = false;
 
-  private side: number;
+  private sideLocation: number;
 
-  constructor(side = 0) {
-    this.side = side;
+  constructor(location = 0) {
+    this.sideLocation = location;
   }
 
   public generateSide(): string {
-    return `${this.sideNum}-${this.pips}`;
+    return `${this.side.number}-${this.pips}`;
   }
 
   public generateKeywords(): string {
     let res = "";
-    const sideStr: string = Sides[this.side];
+    const sideStr: string = Sides[this.sideLocation];
 
     if (this.needClear) {
       res += `.i.(${sideStr}.eyepatch)`;

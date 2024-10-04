@@ -19,7 +19,7 @@ export class SideService {
     const fittestSide = this.getFittestSide(side.type.number, side.keywords);
     if (fittestSide) {
       res.needClear = false;
-      res.sideNum = fittestSide.number;
+      res.side = fittestSide;
       const exceptKeywords = side.keywords.filter(
         (k) => !fittestSide.keywords.includes(k)
       );
@@ -27,7 +27,7 @@ export class SideService {
     } else {
       const emptySide = this.getEmptySideByType(side.type.number);
       res.needClear = !!emptySide.keywords.length;
-      res.sideNum = emptySide.number;
+      res.side = emptySide;
       res.keywords = side.keywords;
     }
 
