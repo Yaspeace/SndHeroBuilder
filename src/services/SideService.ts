@@ -106,6 +106,9 @@ export class SideService {
     return !indexes.some((i, ii) => i !== ii);
   }
 
+  /**
+   * [2,3] -> [1,3] -> [0,3] -> [1,2] -> [0,2] -> [0,1]
+   */
   private stepIdx(indexes: number[]): void {
     const idxToDecrease = indexes.findIndex((i, ii) => i !== ii);
     if (idxToDecrease === -1) {

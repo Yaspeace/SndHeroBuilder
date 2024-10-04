@@ -103,7 +103,9 @@ export default class HeroDice extends Vue {
     this.initialSide.pipCount = heroSide.pips;
     const side = this.sideService.getSide(heroSide.sideNum);
     this.initialSide.keywords = [];
-    this.initialSide.keywords.push(...side.keywords);
+    if (!heroSide.needClear) {
+      this.initialSide.keywords.push(...side.keywords);
+    }
     this.initialSide.keywords.push(...heroSide.keywords);
     this.initialSide.type = this.sideTypeService.getSideType(side.type);
   }
