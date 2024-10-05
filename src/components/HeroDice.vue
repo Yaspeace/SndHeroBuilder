@@ -1,73 +1,93 @@
 <template>
   <div style="display: flex; align-items: flex-start">
-    <table class="dice" style="width: 50%">
-      <tbody>
-        <tr>
-          <td></td>
-          <td class="bordered">
-            <img
-              :src="getSideImg(sidesEnum.Top)"
-              class="dice-img"
-              @click="setEditingSide(sidesEnum.Top)"
-            />
-          </td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td class="bordered">
-            <img
-              :src="getSideImg(sidesEnum.Left)"
-              class="dice-img"
-              @click="setEditingSide(sidesEnum.Left)"
-            />
-          </td>
-          <td class="bordered">
-            <img
-              :src="getSideImg(sidesEnum.Mid)"
-              class="dice-img"
-              @click="setEditingSide(sidesEnum.Mid)"
-            />
-          </td>
-          <td class="bordered">
-            <img
-              :src="getSideImg(sidesEnum.Right)"
-              class="dice-img"
-              @click="setEditingSide(sidesEnum.Right)"
-            />
-          </td>
-          <td class="bordered">
-            <img
-              :src="getSideImg(sidesEnum.Rightmost)"
-              class="dice-img"
-              @click="setEditingSide(sidesEnum.Rightmost)"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td></td>
-          <td class="bordered">
-            <img
-              :src="getSideImg(sidesEnum.Bot)"
-              class="dice-img"
-              @click="setEditingSide(sidesEnum.Bot)"
-            />
-          </td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
+    <div style="width: 30%; text-align: left">
+      <table class="dice">
+        <tbody>
+          <tr>
+            <td></td>
+            <td
+              class="bordered"
+              :class="{ active: curEditingSide === sidesEnum.Top }"
+            >
+              <img
+                :src="getSideImg(sidesEnum.Top)"
+                class="dice-img"
+                @click="setEditingSide(sidesEnum.Top)"
+              />
+            </td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td
+              class="bordered"
+              :class="{ active: curEditingSide === sidesEnum.Left }"
+            >
+              <img
+                :src="getSideImg(sidesEnum.Left)"
+                class="dice-img"
+                @click="setEditingSide(sidesEnum.Left)"
+              />
+            </td>
+            <td
+              class="bordered"
+              :class="{ active: curEditingSide === sidesEnum.Mid }"
+            >
+              <img
+                :src="getSideImg(sidesEnum.Mid)"
+                class="dice-img"
+                @click="setEditingSide(sidesEnum.Mid)"
+              />
+            </td>
+            <td
+              class="bordered"
+              :class="{ active: curEditingSide === sidesEnum.Right }"
+            >
+              <img
+                :src="getSideImg(sidesEnum.Right)"
+                class="dice-img"
+                @click="setEditingSide(sidesEnum.Right)"
+              />
+            </td>
+            <td
+              class="bordered"
+              :class="{ active: curEditingSide === sidesEnum.Rightmost }"
+            >
+              <img
+                :src="getSideImg(sidesEnum.Rightmost)"
+                class="dice-img"
+                @click="setEditingSide(sidesEnum.Rightmost)"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td
+              class="bordered"
+              :class="{ active: curEditingSide === sidesEnum.Bot }"
+            >
+              <img
+                :src="getSideImg(sidesEnum.Bot)"
+                class="dice-img"
+                @click="setEditingSide(sidesEnum.Bot)"
+              />
+            </td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      {{ hero.generate() }}
+    </div>
 
     <DiceEditPopup
       v-if="curEditingSide >= 0"
-      style="margin-left: 20px; width: 50%"
+      style="margin-left: 20px; width: 30%"
       :side="initialSide"
       @on-save="onSaveSide($event)"
       @on-cancel="curEditingSide = -1"
     />
-
-    {{ hero.generate() }}
   </div>
 </template>
 
@@ -132,7 +152,9 @@ export default class HeroDice extends Vue {
 
 <style scoped lang="scss">
 table.dice {
-  border-collapse: collapse;
+  width: 100%;
+  border-spacing: 0;
+  user-select: none;
 
   .dice-img {
     width: 100%;
@@ -143,12 +165,20 @@ table.dice {
     tr {
       td {
         width: 25%;
+        padding: 0;
+        margin: 0;
       }
     }
   }
 }
 
 .bordered {
-  border: 1px solid black;
+  border: 7px solid #696969;
+  vertical-align: middle;
+  background-color: #120f17;
+}
+
+.active {
+  border: 7px solid #a9a9a9;
 }
 </style>

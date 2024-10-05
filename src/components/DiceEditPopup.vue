@@ -77,9 +77,7 @@ export default class DiceEditPopup extends Vue {
 
 <style lang="scss" scoped>
 .popup-layout {
-  border: 1px solid lightgray;
-  border-radius: 10px;
-  background-color: rgba(200, 200, 200, 0.97);
+  border: 5px solid yellow;
   padding: 15px;
 }
 
